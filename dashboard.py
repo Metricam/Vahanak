@@ -23,6 +23,6 @@ st.title(app_title)
 data_plot = wb.data.DataFrame(selected_indicator_code, economy=country_list, time=range(year_str,year_end,year_step)).T.reset_index().dropna()
 data_plot = pd.melt(data_plot, id_vars=['index'], value_vars=country_list)
 data_plot.columns = ["Year","Country",selected_indicator]
-data_plot.Year = data_plot.Year.str.replace("YR","").astype(int)
+data_plot.Year = data_plot.Year.str.replace("YR","").astype('datetime64[Y]')
 plot_object = px.line(data_plot, x="Year", y=selected_indicator,color="Country")
 st.plotly_chart(plot_object)
