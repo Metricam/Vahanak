@@ -3,6 +3,17 @@ import pandas as pd
 import numpy as np
 import wbgapi as wb
 import plotly.express as px
+import streamlit.components.v1 as components
+
+components.html("""<script>
+var MemberSpace = window.MemberSpace || {"subdomain":"vahanak"};
+(function(d){
+  var s = d.createElement("script");
+  s.src = "https://cdn.memberspace.com/scripts/widgets.js";
+  var e = d.getElementsByTagName("script")[0];
+  e.parentNode.insertBefore(s,e);
+}(document));
+</script>""")
 
 ##configs
 country_list = ['ARM','AZE', 'GEO']
